@@ -28,7 +28,7 @@ func registerAPIRoutes(app core.App) {
 		// Webhook can be registered separately or within the group.
 		e.Router.POST("/api/hooks/dodo_purchase", handleDodoPurchase(app))
 
-		return nil
+		return e.Next()
 	})
 }
 
