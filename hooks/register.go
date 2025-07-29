@@ -9,11 +9,5 @@ func Register(app core.App) error {
 	// Register the API routes
 	registerAPIRoutes(app)
 
-	// Here you could register other hooks in the future, for example:
-	// app.OnRecordBeforeCreateRequest("licenses").Add(func(e *core.RecordCreateEvent) error {
-	// 	 // Your logic here
-	// 	 return nil
-	// })
-
 	return nil
 }

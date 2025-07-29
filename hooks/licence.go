@@ -78,3 +78,16 @@ func activateDeviceIfNeeded(app core.App, license *core.Record, deviceID string)
 
 	return true, nil // Activation successful
 }
+
+func GenerateSalt(length int) (string, error) {
+    const saltChars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+    salt := make([]byte, length)
+    for i := range salt {
+        num, err := rand.Int(rand.Reader, big.NewInt(int64(len(saltChars))))
+        if err != nil {
+            return "", err
+        }
+        salt[i] = saltChars[num.Int64()]
+    }
+    return string(salt), nil
+}
