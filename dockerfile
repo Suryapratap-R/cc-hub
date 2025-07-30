@@ -36,4 +36,4 @@ VOLUME /pb/pb_data
 # Expose the port PocketBase will listen on
 EXPOSE 8080
 
-ENTRYPOINT ["./pocketbase_app serve --http=0.0.0.0:8080"]
+ENTRYPOINT [ "./pocketbase_app", "serve", "--http=0.0.0.0:8080" ]
