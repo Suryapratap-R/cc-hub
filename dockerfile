@@ -31,8 +31,6 @@ WORKDIR /pb
 # Copy the compiled binary from the builder stage
 COPY --from=builder /app/pocketbase_app .
 
-VOLUME /pb/pb_data
-
 # Expose the port PocketBase will listen on
 EXPOSE 8080
 
